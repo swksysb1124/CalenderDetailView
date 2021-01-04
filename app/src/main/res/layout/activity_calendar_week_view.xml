@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CalendarWeekViewActivity">
+
+    <com.example.weekuptime.CalendarWeekView
+        android:id="@+id/calendar_week_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="backward"
+            android:text="BACKWARD" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="forward"
+            android:text="FORWARD" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/no_data_hint"
+        style="?android:textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="16dp"
+        android:text="No data yet"
+        android:visibility="gone" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/detail_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:text="Today"
+        android:textColor="@color/colorMagenta"
+        android:textAllCaps="false"
+        android:backgroundTint="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="backToToday"/>
+
+</LinearLayout>
