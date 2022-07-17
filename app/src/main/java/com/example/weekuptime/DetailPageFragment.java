@@ -68,8 +68,10 @@ public class DetailPageFragment extends Fragment {
 
             @Override
             public void onDayEventsReceived(List<DayEventView.DayEvent> dayEventList) {
-                DayEventView dayEventView = getView().findViewById(R.id.day_event_view);
-                dayEventView.setDayEvents(dayEventList);
+                if (getView() != null) {
+                    DayEventView dayEventView = getView().findViewById(R.id.day_event_view);
+                    dayEventView.setDayEvents(dayEventList);
+                }
             }
         });
 

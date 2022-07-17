@@ -2,8 +2,10 @@ package com.example.weekuptime;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -16,7 +18,8 @@ public class CalendarWeekViewActivity extends AppCompatActivity {
     private static final String TAG = "LOG_" + CalendarWeekViewActivity.class.getSimpleName();
 
     private CalendarWeekView calendarWeekView;
-    private ViewPager detailPager;
+    //    private ViewPager detailPager;
+    private ViewPager2 detailPager;
 
     private int selectedYear;
     private int selectedMonth;
@@ -56,16 +59,19 @@ public class CalendarWeekViewActivity extends AppCompatActivity {
             long time = getTimeByPosition(i);
             times.add(time);
         }
-        DetailPagerAdapter detailAdapter = new DetailPagerAdapter(getSupportFragmentManager(), times);
+        DetailPagerAdapter detailAdapter = new DetailPagerAdapter(this, times);
 
         detailPager = findViewById(R.id.detail_pager);
-        detailPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        detailPager.setPageTransformer(new ZoomOutPageTransformer());
+        detailPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
             }
 
             @Override
             public void onPageSelected(int position) {
+
             }
 
             @Override
@@ -76,6 +82,7 @@ public class CalendarWeekViewActivity extends AppCompatActivity {
             }
         });
         detailPager.setAdapter(detailAdapter);
+
         detailPager.setCurrentItem(dayCount - 1); // set to last day; that is today
     }
 

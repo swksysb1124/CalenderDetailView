@@ -50,7 +50,8 @@ public class CalendarWeekView extends LinearLayout {
     }
 
     private void inflateView(Context context) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater)
+                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         inflater.inflate(R.layout.calendar_week_view, this);
         setOrientation(VERTICAL);
     }
@@ -154,16 +155,15 @@ public class CalendarWeekView extends LinearLayout {
 
     private void updateWeekOfSelectedDate() {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(selectedYear, selectedMonth - 1, selectedDate, 0, 0, 0);
-        long selectedTime = calendar.getTime().getTime();
-        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-
+        calendar.set(selectedYear, selectedMonth - 1, selectedDate,
+                0, 0, 0);
+        final long selectedTime = calendar.getTime().getTime();
+        final int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
         for (int i = 1; i <= 7; i++) {
-            long otherTime = selectedTime + (i - dayOfWeek) * MILLISECONDS_OF_DAY;
-            calendar.setTimeInMillis(otherTime);
-
+            long otherTime = selectedTime + (long) (i - dayOfWeek) * MILLISECONDS_OF_DAY;
             dayTimes[i - 1] = otherTime;
 
+            calendar.setTimeInMillis(otherTime);
             TextView dayLabel = dayLabels[i - 1];
             // normal case
             dayLabel.setText(String.valueOf(calendar.get(Calendar.DATE)));

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-603169168/WeekUptime.iml" filepath="$PROJECT_DIR$/.idea/modules/-603169168/WeekUptime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeekUptime.app.iml" filepath="$PROJECT_DIR$/.idea/modules/WeekUptime.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeekUptime.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/WeekUptime.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeekUptime.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/WeekUptime.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WeekUptime.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/WeekUptime.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>
